@@ -1,30 +1,27 @@
-const express = require("express"); //syntax for importinf modules in  node? check if its still curr
-const app = express(); //init a single application in express. That handles http request
+const express = require("express");
+const mongoose = require("mongoose");
+const cookieSession = require("cookie-session"); // moduel that makes express able to use cookies. *npm install --save cookie-session
+const passport = require("passport");
+const keys = require("./config/keys");
 
-app.get("/", (req, res) => {
-  //app create a route handler
-  //.get is method that watches incoming request for that method
-  // forward represents the root. could be anything like "/greeting" or "/firstpage"
-  //the => argument that calls the function send everytime that route is accessed.
-  res.send({ hi: "there" });
-});
+require("./models/User"); /** Very important that this comes before passport require statment because passport tries to use User.js. Order of require statment is important*/
+require("./services/passport"); // insures that the passport file is excuted
 
-//HEROKU
-// app.listen(5000); //5000 is the port. if using 3rd party server lik horku must use the port that that give like following
-const PORT = process.env.PORT || 5000; // this code tells express to look for a enviornment variable given by horoku(in production)
-//if in devellopment use 5000 indicated by ||
+mongoose.connect(keys.mongoURI);
+
+const app = express(); //Init a new express application
+
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000, //Sets how long cookie can last in browser.
+    keys: [keys.cookieKey] //keeps cookie encripted.
+  })
+);
+// tells passport that it needs to use cookies in the app
+app.use(passport.initialize());
+app.use(passport.session());
+//3 methods above are considered middlewear. They do pre-processing for certain request before sending to in-house route handlers
+
+require("./routes/auth")(app); //Basically called the auth.js function and passed the app variable as an param.
+const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-
-//next step to setup hokue go to package.json and add:
-/* "engines": {
-  "node": "8.1.1" // update my version tho.
-  "npm": "5.0.3"
-},
-This tells horkue to use specific version of node, cuz by default haroku will use a no up to date version
-
-next tell horku how to start app. go to package and add "start": "node index.js" in "scripts"
-tells heroku how to start app
-
-Lastly we must create a .gitignore file to ignore dependencies cuz heroku will add them for us. like the
-exress node modules files. This file tell which files and folders not to commit when using version control
-*/
