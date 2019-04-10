@@ -1,0 +1,6 @@
+Project checkout:
+
+12 March: Finished Landing and logo click. Made git repo & pushed all to git.
+13 March: Started payment setup w. Stripe
+19 March: N/A
+10 April: Added prod+dev key files & added stripe keys.

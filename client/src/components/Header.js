@@ -2,6 +2,7 @@
 //have alot of methods and helpers.
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   //helper method that determines the status of oAuth
@@ -24,13 +25,18 @@ class Header extends Component {
     }
   }
   //Method that renders(displays)
+  // to={this.props.user ? '/surveys' : '/'} boolean checks if user exist
+  //if true return /surveys else return /
   render() {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="/" className="left brand-logo">
-            PracticeApp
-          </a>
+          <Link
+            to={this.props.auth ? "/surveys" : "/"}
+            className="left brand-logo"
+          >
+            EmailFeed
+          </Link>
           <ul className="right">
             <li>{this.userStatus()}</li>
           </ul>
