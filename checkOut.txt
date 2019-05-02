@@ -3,4 +3,6 @@ Project checkout:
 12 March: Finished Landing and logo click. Made git repo & pushed all to git.
 13 March: Started payment setup w. Stripe
 19 March: N/A
-10 April: Added prod+dev key files & added stripe keys.
+10 April: Deployed to Heroku & set up prod && dev environment. stripe keys.
+02 May: Finished prod/dev environment seperation. Has to re-install heroku cli.
+        fixed prodKeys.js and devKeys.js
