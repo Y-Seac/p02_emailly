@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import StripePay from "./StripePay";
 
 class Header extends Component {
   //helper method that determines the status of oAuth
@@ -17,11 +18,14 @@ class Header extends Component {
           </li>
         );
       default:
-        return (
-          <li>
+        return [
+          <li key="1">
+            <StripePay />
+          </li>,
+          <li key="2">
             <a href="/api/logout">Logout</a>
           </li>
-        );
+        ];
     }
   }
   //Method that renders(displays)
@@ -35,7 +39,7 @@ class Header extends Component {
             to={this.props.auth ? "/surveys" : "/"}
             className="left brand-logo"
           >
-            EmailFeed
+            SurveyMail
           </Link>
           <ul className="right">
             <li>{this.userStatus()}</li>

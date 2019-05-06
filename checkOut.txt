@@ -6,3 +6,11 @@ Project checkout:
 10 April: Deployed to Heroku & set up prod && dev environment. stripe keys.
 02 May: Finished prod/dev environment seperation. Has to re-install heroku cli.
         fixed prodKeys.js and devKeys.js
+03 May: Set up Stripe payments. Added .env files to root to store keys on the
+    frontend
+
+    Note::Logic & keys in the /config folder is for the backend, cant be used
+      for frontend:
+    Note::Must separate frontend and backend because anything within the
+      react frontend is made public. Also uses es2015:
+06 May: Rolled Stripe keys (kept getting error). 
