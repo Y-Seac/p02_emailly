@@ -23,5 +23,6 @@ app.use(passport.session());
 //3 methods above are considered middlewear. They do pre-processing for certain request before sending to in-house route handlers
 
 require("./routes/auth")(app); //Basically called the auth.js function and passed the app variable as an param.
+require("./routes/billingRoutes")(app);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

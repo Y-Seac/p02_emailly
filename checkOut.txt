@@ -13,4 +13,5 @@ Project checkout:
       for frontend:
     Note::Must separate frontend and backend because anything within the
       react frontend is made public. Also uses es2015:
-06 May: Rolled Stripe keys (kept getting error). 
+06 May: Rolled Stripe keys (kept getting error). Enabled Stripe to communicate to
+        the backend User model info. Create new route : "api/stripe". 
