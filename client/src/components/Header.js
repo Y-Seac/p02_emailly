@@ -1,9 +1,9 @@
 //Making header a class componet because we expect a header to
 //have alot of methods and helpers.
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import StripePay from "./StripePay";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import StripePay from './StripePay';
 
 class Header extends Component {
   //helper method that determines the status of oAuth
@@ -22,6 +22,9 @@ class Header extends Component {
           <li key="1">
             <StripePay />
           </li>,
+          <li key="3" style={{ margin: '0 10px' }}>
+            Credits: {this.props.auth.credits}
+          </li>,
           <li key="2">
             <a href="/api/logout">Logout</a>
           </li>
@@ -36,7 +39,7 @@ class Header extends Component {
       <nav>
         <div className="nav-wrapper">
           <Link
-            to={this.props.auth ? "/surveys" : "/"}
+            to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"
           >
             SurveyMail
