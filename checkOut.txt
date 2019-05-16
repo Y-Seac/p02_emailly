@@ -14,4 +14,7 @@ Project checkout:
     Note::Must separate frontend and backend because anything within the
       react frontend is made public. Also uses es2015:
 06 May: Rolled Stripe keys (kept getting error). Enabled Stripe to communicate to
-        the backend User model info. Create new route : "api/stripe". 
+        the backend User model info. Create new route : "api/stripe".
+14 May: Fixed 404 error [Was a small syntax error that took forever to find lol].
+       finished stripePay/billing.
+15 May: Linked express to react assets/routes in prod. 
