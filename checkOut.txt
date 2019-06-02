@@ -2,7 +2,7 @@ Project checkout:
 
 12 March: Finished Landing and logo click. Made git repo & pushed all to git.
 13 March: Started payment setup w. Stripe
-19 March: N/A
+19 March: N/A1  q`
 10 April: Deployed to Heroku & set up prod && dev environment. stripe keys.
 02 May: Finished prod/dev environment seperation. Has to re-install heroku cli.
         fixed prodKeys.js and devKeys.js
@@ -17,4 +17,10 @@ Project checkout:
         the backend User model info. Create new route : "api/stripe".
 14 May: Fixed 404 error [Was a small syntax error that took forever to find lol].
        finished stripePay/billing.
-15 May: Linked express to react assets/routes in prod. 
+15 May: Linked express to react assets/routes in prod. Added heroku build & deployed
+       to git.
+23 May: Mongoose setup. Added survey model and recipient embeded model.
+24 May: note: middlewares are like lil function, like checkLogin checkEnough etc. Will referenced often.
+29 May: Started mailer
+30 May: Set up sendgrid and finsihed Mailer
+01 June: Sendgrid has some proxy bug??. Finished sendgrid

@@ -6,4 +6,4 @@ const userSchema = new Schema({
   credits: { type: Number, default: 0 }
 });
 
-mongoose.model('users', userSchema); //Adds Users into DB. Only creates new model instance if model does not alreayd exist just adds.
+mongoose.model('users', userSchema); //creates/adds Users into DB. Only creates new model instance if model does not alreayd exist just adds.

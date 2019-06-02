@@ -6,6 +6,7 @@ const bodyParser = require('body-parser'); //middlewear. Express doesn't automat
 const keys = require('./config/keys');
 
 require('./models/User'); /** Very important that this comes before passport require statment because passport tries to use User.js. Order of require statment is important*/
+require('./models/Survey');
 require('./services/passport'); // insures that the passport file is excuted
 
 mongoose.connect(keys.mongoURI);
@@ -27,6 +28,7 @@ app.use(passport.session());
 
 require('./routes/auth')(app); //Basically called the auth.js function and passed the app variable as an param.
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 //Conditional that signals express that its in production.
 if (process.env.NODE_ENV === 'production') {
@@ -41,5 +43,5 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const PORT = process.env.PORT; //|| 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT);
