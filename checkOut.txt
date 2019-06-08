@@ -23,4 +23,8 @@ Project checkout:
 24 May: note: middlewares are like lil function, like checkLogin checkEnough etc. Will referenced often.
 29 May: Started mailer
 30 May: Set up sendgrid and finsihed Mailer
-01 June: Sendgrid has some proxy bug??. Finished sendgrid
+01 June: Sendgrid has some proxy bug??::Fixed bugged.Forgot "/" in app.post :| .
+         Finished sendgrid setup.
+02 June: Started frontend survey form (Dashboard.js)
+05 June: Started survey components.
+06 June: Fixed a 3 DAY long bug lol! Spelled component wrong!!
