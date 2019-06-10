@@ -28,3 +28,4 @@ Project checkout:
 02 June: Started frontend survey form (Dashboard.js)
 05 June: Started survey components.
 06 June: Fixed a 3 DAY long bug lol! Spelled component wrong!!
+08-09 June: Finished survey section!
